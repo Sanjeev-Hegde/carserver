@@ -33,12 +33,15 @@
 
   <script type="text/javascript">
     $(function () {
+
       var url = window.location.search.match(/url=([^&]+)/);
       if (url && url.length > 1) {
         url = decodeURIComponent(url[1]);
       } else {
+        var ipAddr = location.host;
+         console.log(ipAddr);
         //url = "http://petstore.swagger.io/v2/swagger.json";
-	url = "http://localhost:3344/swagger/swagger.json";
+	       url = "http://"+ipAddr+"/swagger/swagger.json";
       }
 
       hljs.configure({
