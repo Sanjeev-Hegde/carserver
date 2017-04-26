@@ -26,10 +26,10 @@ router.get('/get_car_details', function(req, res, next) {
 //   });
 // }
 
-gpio.setup(11, gpio.DIR_OUT, write);
+gpio.setup(13, gpio.DIR_OUT, write);
 
 function write() {
-    gpio.write(11, true, function(err) {
+    gpio.write(13, true, function(err) {
         if (err) throw err;
         console.log('Written to pin');
     });
