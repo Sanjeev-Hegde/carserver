@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var gpio = require('rpi-gpio');
 
 /**
  * @swagger
@@ -16,7 +17,16 @@ var router = express.Router();
  *
  */
 router.get('/get_car_details', function(req, res, next) {
+
+    gpio.setup(7, gpio.DIR_OUT, write);
     res.send({"name":"Monster Truck","controllType":"Wify"});
 });
+
+function write() {
+  gpio.write(7, true, function(err) {
+      if (err) throw err;
+      console.log('Written to pin');
+  });
+}
 
 module.exports = router;
