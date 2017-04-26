@@ -26,7 +26,7 @@ router.get('/get_car_details', function(req, res, next) {
 //   });
 // }
 
-gpio.setup(7, gpio.DIR_OUT, write);
+gpio.setup(11, gpio.DIR_OUT, write);
 
 function write() {
     gpio.write(7, true, function(err) {
