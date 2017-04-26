@@ -29,7 +29,7 @@ router.get('/get_car_details', function(req, res, next) {
 gpio.setup(11, gpio.DIR_OUT, write);
 
 function write() {
-    gpio.write(7, true, function(err) {
+    gpio.write(11, true, function(err) {
         if (err) throw err;
         console.log('Written to pin');
     });
