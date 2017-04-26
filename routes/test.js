@@ -18,7 +18,13 @@ var gpio = require('rpi-gpio');
  */
 router.get('/get_car_details', function(req, res, next) {
 
-    gpio.setup(7, gpio.DIR_OUT, write);
+  gpio.setup(7, gpio.DIR_IN, readInput);
+
+function readInput() {
+  gpio.read(7, function(err, value) {
+      console.log('The value is ' + value);
+  });
+}
     res.send({"name":"Monster Truck","controllType":"Wify"});
 });
 
