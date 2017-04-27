@@ -53,8 +53,8 @@ function write() {
  */
 router.get('/move_forward', function(req, res, next) {
 
-    gpio.setup(7, gpio.DIR_OUT, function write() {
-        gpio.write(7, true, function(err) {
+    gpio.setup(3, gpio.DIR_OUT, function write() {
+        gpio.write(3, true, function(err) {
             if (err) throw err;
             console.log('Moving Forward');
         });
@@ -77,8 +77,8 @@ router.get('/move_forward', function(req, res, next) {
  */
 router.get('/move_backward', function(req, res, next) {
 
-    gpio.setup(8, gpio.DIR_OUT, function write() {
-        gpio.write(8, true, function(err) {
+    gpio.setup(5, gpio.DIR_OUT, function write() {
+        gpio.write(5, true, function(err) {
             if (err) throw err;
             console.log('Moving Backward');
         });
@@ -101,13 +101,13 @@ router.get('/move_backward', function(req, res, next) {
  */
 router.get('/stop_vertical_movement', function(req, res, next) {
 
-    gpio.setup(7, gpio.DIR_OUT, function write() {
-        gpio.write(7, false, function(err) {
+    gpio.setup(3, gpio.DIR_OUT, function write() {
+        gpio.write(3, false, function(err) {
             if (err) throw err;
         });
     });
-    gpio.setup(8, gpio.DIR_OUT, function write() {
-        gpio.write(8, false, function(err) {
+    gpio.setup(5, gpio.DIR_OUT, function write() {
+        gpio.write(5, false, function(err) {
             if (err) throw err;
         });
     });
@@ -132,8 +132,8 @@ router.get('/stop_vertical_movement', function(req, res, next) {
  */
 router.get('/move_right', function(req, res, next) {
 
-    gpio.setup(9, gpio.DIR_OUT, function write() {
-        gpio.write(9, true, function(err) {
+    gpio.setup(7, gpio.DIR_OUT, function write() {
+        gpio.write(7, true, function(err) {
             if (err) throw err;
             console.log('Moving Right');
         });
@@ -156,8 +156,8 @@ router.get('/move_right', function(req, res, next) {
  */
 router.get('/move_left', function(req, res, next) {
 
-    gpio.setup(10, gpio.DIR_OUT, function write() {
-        gpio.write(10, true, function(err) {
+    gpio.setup(11, gpio.DIR_OUT, function write() {
+        gpio.write(11, true, function(err) {
             if (err) throw err;
             console.log('Moving Left');
         });
@@ -180,13 +180,13 @@ router.get('/move_left', function(req, res, next) {
  */
 router.get('/stop_horizontal_movement', function(req, res, next) {
 
-    gpio.setup(9, gpio.DIR_OUT, function write() {
-        gpio.write(9, false, function(err) {
+    gpio.setup(7, gpio.DIR_OUT, function write() {
+        gpio.write(7, false, function(err) {
             if (err) throw err;
         });
     });
-    gpio.setup(10, gpio.DIR_OUT, function write() {
-        gpio.write(10, false, function(err) {
+    gpio.setup(11, gpio.DIR_OUT, function write() {
+        gpio.write(11, false, function(err) {
             if (err) throw err;
         });
     });
