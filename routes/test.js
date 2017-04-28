@@ -37,6 +37,8 @@ function write() {
     res.send({"name":"Monster Truck","controllType":"Wify"});
 });
 
+
+
 /**
  * @swagger
  * /truck_api/test/move_forward:
@@ -53,12 +55,13 @@ function write() {
  */
 router.get('/move_forward', function(req, res, next) {
 
-    gpio.setup(3, gpio.DIR_OUT, function write() {
-        gpio.write(3, true, function(err) {
-            if (err) throw err;
-            console.log('Moving Forward');
-        });
-    });
+      gpio.setup(3, gpio.DIR_OUT, function write() {
+          gpio.write(3, true, function(err) {
+              if (err) throw err;
+              console.log('Moving Forward');
+          });
+      });
+
     res.send({"action":"Moving Forward"});
 });
 /**

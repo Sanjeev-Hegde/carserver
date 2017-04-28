@@ -42,6 +42,10 @@ server = require('http-shutdown')(server);
 server.listen(3344,function () {
     console.log("Listening on port %s...", server.address().port);
 });
+process.on('uncaughtException', function (exception) {
+   // handle or ignore error
+   console.log(exception);
+});
 process.on('SIGINT', function() {
   server.shutdown(function() {
     console.log('Everything is cleanly shutdown.');
