@@ -20,6 +20,8 @@
     "http": "0.0.0",
     "http-shutdown": "^1.0.3",
     "https": "^1.0.0",
+    "i2c-bus": "^1.2.2",
+    "i2c-mpu6050": "^2.2.1",
     "mongodb": "^2.2.5",
     "morgan": "~1.7.0",
     "node-rest-client": "^2.0.1",
