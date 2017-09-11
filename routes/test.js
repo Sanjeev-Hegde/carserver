@@ -1,22 +1,24 @@
 var express = require('express');
 var router = express.Router();
 var gpio = require('rpi-gpio');
-var i2c = require('i2c-bus');
-var MPU6050 = require('i2c-mpu6050');
 
 
-setInterval(function(){
-try{
-	var address = 0x68;
-	var i2c1 = i2c.openSync(1);
-	var sensor = new MPU6050(i2c1, address);
-	var data = sensor.readSync();
-	console.log(data);
-}
-	catch(err){
-	console.log(err);
-}
-},1000);
+// var i2c = require('i2c-bus');
+// var MPU6050 = require('i2c-mpu6050');
+//
+//
+// setInterval(function(){
+// try{
+// 	var address = 0x68;
+// 	var i2c1 = i2c.openSync(1);
+// 	var sensor = new MPU6050(i2c1, address);
+// 	var data = sensor.readSync();
+// 	console.log(data);
+// }
+// 	catch(err){
+// 	console.log(err);
+// }
+// },1000);
 
 
 /**
