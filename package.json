@@ -23,6 +23,7 @@
     "i2c-bus": "^1.2.2",
     "i2c-mpu6050": "^2.2.1",
     "mongodb": "^2.2.5",
+    "mongoose": "^4.11.11",
     "morgan": "~1.7.0",
     "node-rest-client": "^2.0.1",
     "object-hash": "^1.1.4",
