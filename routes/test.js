@@ -237,7 +237,7 @@ router.get('/stop_horizontal_movement', function(req, res, next) {
  *         description: historic imu data
  *
  */
-router.get('/get_car_details', function(req, res, next) {
+router.get('/get_imu_data', function(req, res, next) {
 
 	  Imudata.find({},function (err, data) {
 	    res.send(data);
