@@ -1,7 +1,13 @@
 var express = require('express');
 var router = express.Router();
 var gpio = require('rpi-gpio');
-
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/car');
+var Schema = mongoose.Schema;
+var CarSchema = new Schema({
+  data: Object
+});
+var Imudata = mongoose.model('imudata', CarSchema);
 
 // var i2c = require('i2c-bus');
 // var MPU6050 = require('i2c-mpu6050');
@@ -214,6 +220,29 @@ router.get('/stop_horizontal_movement', function(req, res, next) {
     });
     console.log('Horizontal Movement Stopped');
     res.send({"action":"Horizontal Movement Stopped"});
+});
+
+
+/**
+ * @swagger
+ * /truck_api/test/get_imu_data:
+ *   get:
+ *     tags:
+ *       - Monster Truck
+ *     description: Returns historic imu data'
+ *     produces:
+ *       - application/json
+ *     responses:
+ *       200:
+ *         description: historic imu data
+ *
+ */
+router.get('/get_car_details', function(req, res, next) {
+
+	  Imudata.find({},function (err, data) {
+	    res.send(data);
+	  })
+
 });
 
 module.exports = router;
